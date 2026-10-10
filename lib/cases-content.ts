@@ -4,6 +4,7 @@ export type CaseVisualKind = "architecture" | "contract" | "registry" | "employm
 
 export type PracticeCase = {
   id: string;
+  status: "illustrative";
   category: string;
   title: string;
   overview: string;
@@ -20,6 +21,7 @@ export type PracticeCase = {
 export const prototypeCases: PracticeCase[] = [
   {
     id: "debt",
+    status: "illustrative",
     category: "Гражданские споры",
     title: "Взыскание задолженности",
     overview: "Документы, расчёты и последовательная правовая позиция в споре об оплате.",
@@ -35,6 +37,7 @@ export const prototypeCases: PracticeCase[] = [
   },
   {
     id: "contract",
+    status: "illustrative",
     category: "Арбитражные дела",
     title: "Спор по договорным обязательствам",
     overview: "Внимание к условиям договора, доказательствам исполнения и интересам бизнеса.",
@@ -50,6 +53,7 @@ export const prototypeCases: PracticeCase[] = [
   },
   {
     id: "fas",
+    status: "illustrative",
     category: "Административные дела",
     title: "Спор с ФАС и РНП",
     overview: "Анализ обстоятельств, процедурных требований и аргументов в защиту деловой репутации.",
@@ -65,6 +69,7 @@ export const prototypeCases: PracticeCase[] = [
   },
   {
     id: "employment",
+    status: "illustrative",
     category: "Трудовые споры",
     title: "Защита интересов работодателя",
     overview: "Проверка кадровых документов и взвешенная оценка правовых рисков.",

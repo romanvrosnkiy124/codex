@@ -11,32 +11,24 @@
 .note blockquote { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .note p { display: flex; align-items: center; gap: 15px; margin-top: 22px; color: var(--muted); font-size: 16px; }
 .note p::before { content: ""; width: 30px; height: 1px; background: var(--burgundy-muted); }
-.prototypeNotice { margin-block: 40px 28px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--burgundy-muted); font-size: 16px; line-height: 1.6; }
+.prototypeNotice { margin-block: 32px 20px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--burgundy-muted); font-size: 16px; line-height: 1.6; }
 .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; list-style: none; margin: 0; padding: 0; }
 .card { min-width: 0; border: 1px solid rgba(75, 31, 32, .16); background: var(--ivory); }
 .cardInner { display: flex; flex-direction: column; height: 100%; }
 .cardVisual { position: relative; overflow: hidden; }
-.visual { aspect-ratio: 1.95; overflow: hidden; background: var(--ivory-alt); }
-.visual > svg { display: block; width: 100%; height: 100%; transform-origin: center; transition: transform 650ms cubic-bezier(.22,.61,.36,1); }
-.visualBackdrop { fill: var(--ivory-alt); }
-.visualMain { fill: color-mix(in srgb, var(--bronze) 55%, var(--ivory-alt) 45%); }
-.visualSecondary { fill: color-mix(in srgb, var(--bronze) 25%, var(--ivory-alt) 75%); }
-.visualLight { fill: var(--ivory); }
-.visualDark { fill: var(--charcoal); }
-.visualBronze { fill: var(--bronze); }
-.visualLines { fill: none; stroke: var(--burgundy-muted); stroke-width: 1; opacity: .55; }
+.visual { position: relative; aspect-ratio: 1.95; overflow: hidden; background: var(--ivory-alt); }
+.visual > img { display: block; object-fit: cover; transform-origin: center; transition: transform 650ms cubic-bezier(.22,.61,.36,1); }
 .category { position: absolute; left: 12px; top: 12px; max-width: calc(100% - 24px); padding: 5px 8px; background: var(--ivory); color: var(--ink); font-size: 12px; line-height: 1.4; }
-.prototypeLabel { position: absolute; left: 12px; bottom: 10px; padding: 3px 7px; background: var(--ivory); color: var(--burgundy-muted); font-size: 11px; line-height: 1.4; }
-.cardBody { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: 18px 16px 20px; }
+.cardBody { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: 14px 16px; }
 .caseTitle { min-height: 2.3em; font-family: var(--serif); font-size: 26px; line-height: 1.15; letter-spacing: -.015em; overflow-wrap: anywhere; hyphens: auto; }
-.summary { display: grid; gap: 13px; margin: 20px 0 0; }
+.summary { display: grid; gap: 9px; margin: 12px 0 0; }
 .summaryItem { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 10px; }
 .summaryItem dt { color: var(--muted); font-size: 14px; line-height: 1.5; }
 .summaryItem dd { margin: 0; color: var(--ink); font-size: 16px; line-height: 1.4; overflow-wrap: anywhere; }
-.detailCta { display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 24px; color: var(--burgundy-dark); font-size: 16px; line-height: 1.5; cursor: default; }
+.detailCta { display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 14px; color: var(--burgundy-dark); font-size: 16px; line-height: 1.5; cursor: default; }
 .detailCta svg { width: 19px; height: 16px; transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
 @media (hover: hover) and (pointer: fine) {
-  .card:hover .visual > svg { transform: scale(1.025); }
+  .card:hover .visual > img { transform: scale(1.025); }
   .card:hover .detailCta svg { transform: translateX(4px); }
 }
 
@@ -61,7 +53,7 @@
 
 @media (max-width: 1199px) {
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cardBody { padding: 20px; }
+  .cardBody { padding: 14px 20px; }
   .caseTitle { font-size: 28px; }
   .summaryItem { grid-template-columns: 100px minmax(0, 1fr); }
   .cases { padding-block: 64px 56px; }
@@ -95,7 +87,7 @@
   .heading { font-size: 42px; }
   .supporting { margin-top: 23px; font-size: 16px; }
   .note { padding-left: 20px; }
-  .prototypeNotice { margin-block: 30px 24px; padding-top: 20px; }
+  .prototypeNotice { margin-block: 24px 18px; padding-top: 20px; }
   .method { padding-block: 48px 54px; }
   .methodHeading { font-size: 42px; }
   .methodCopy { font-size: 16px; }
@@ -113,6 +105,6 @@
   .caseTitle { font-size: 25px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .visual > svg, .detailCta svg { transition: none; }
-  .card:hover .visual > svg, .card:hover .detailCta svg { transform: none; }
+  .visual > img, .detailCta svg { transition: none; }
+  .card:hover .visual > img, .card:hover .detailCta svg { transform: none; }
 }

@@ -25,8 +25,8 @@ export default function CasesSection() {
               <p>Руслан Рагимов</p>
             </aside>
           </div>
-          <p className={styles.prototypeNotice} data-cases-intro>Прототипы дел — примеры структуры подачи. Подтверждённые материалы и результаты будут добавлены позднее.</p>
-          <ol className={styles.cards} aria-label="Прототипы судебных дел">
+          <p className={styles.prototypeNotice} data-cases-intro>Описания и результаты приведены для примера. Подтверждённые материалы дел будут добавлены позднее.</p>
+          <ol className={styles.cards} aria-label="Примеры судебных дел">
             {prototypeCases.map((item) => <CaseCard item={item} key={item.id} />)}
           </ol>
         </div>

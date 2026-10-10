@@ -5,12 +5,11 @@ import styles from "./CasesSection.module.css";
 
 export default function CaseCard({ item }: { item: PracticeCase }) {
   return (
-    <li className={styles.card} data-case-card>
+    <li className={styles.card} data-case-card data-case-status={item.status}>
       <article className={styles.cardInner} aria-labelledby={`case-${item.id}-heading`}>
         <div className={styles.cardVisual}>
           <CaseVisual kind={item.visual} />
           <p className={styles.category}>{item.category}</p>
-          <span className={styles.prototypeLabel}>Прототип</span>
         </div>
         <div className={styles.cardBody}>
           <h3 id={`case-${item.id}-heading`} className={styles.caseTitle}>{item.title}</h3>
