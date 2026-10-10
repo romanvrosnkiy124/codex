@@ -11,7 +11,7 @@
 .note blockquote { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .note p { display: flex; align-items: center; gap: 15px; margin-top: 22px; color: var(--muted); font-size: 16px; }
 .note p::before { content: ""; width: 30px; height: 1px; background: var(--burgundy-muted); }
-.prototypeNotice { margin-block: 32px 20px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--burgundy-muted); font-size: 16px; line-height: 1.6; }
+.prototypeNotice { margin-block: 32px 20px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; line-height: 1.6; }
 .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; list-style: none; margin: 0; padding: 0; }
 .card { min-width: 0; border: 1px solid rgba(75, 31, 32, .16); background: var(--ivory); }
 .cardInner { display: flex; flex-direction: column; height: 100%; }
@@ -19,17 +19,18 @@
 .visual { position: relative; aspect-ratio: 1.95; overflow: hidden; background: var(--ivory-alt); }
 .visual > img { display: block; object-fit: cover; transform-origin: center; transition: transform 650ms cubic-bezier(.22,.61,.36,1); }
 .category { position: absolute; left: 12px; top: 12px; max-width: calc(100% - 24px); padding: 5px 8px; background: var(--ivory); color: var(--ink); font-size: 12px; line-height: 1.4; }
-.cardBody { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: 14px 16px; }
+/* Return the space saved by tighter line boxes to the inset, preserving card height. */
+.cardBody { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: 14px 18px 17.2px; }
 .caseTitle { min-height: 2.3em; font-family: var(--serif); font-size: 26px; line-height: 1.15; letter-spacing: -.015em; overflow-wrap: anywhere; hyphens: auto; }
 .summary { display: grid; gap: 9px; margin: 12px 0 0; }
 .summaryItem { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 10px; }
-.summaryItem dt { color: var(--muted); font-size: 14px; line-height: 1.5; }
-.summaryItem dd { margin: 0; color: var(--ink); font-size: 16px; line-height: 1.4; overflow-wrap: anywhere; }
-.detailCta { display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 14px; color: var(--burgundy-dark); font-size: 16px; line-height: 1.5; cursor: default; }
+.summaryItem dt { color: var(--muted); font-size: 14px; line-height: 1.45; }
+.summaryItem dd { margin: 0; color: var(--ink); font-size: 16px; line-height: 1.35; overflow-wrap: anywhere; }
+.detailCta { display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 14px; color: var(--muted); font-size: 14px; line-height: 24px; cursor: default; }
 .detailCta svg { width: 19px; height: 16px; transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
 @media (hover: hover) and (pointer: fine) {
   .card:hover .visual > img { transform: scale(1.025); }
-  .card:hover .detailCta svg { transform: translateX(4px); }
+  .card:hover .detailCta svg { transform: translateX(3px); }
 }
 
 .method { position: relative; isolation: isolate; padding-block: 72px 80px; background: var(--ink); color: var(--ivory); }
@@ -53,7 +54,7 @@
 
 @media (max-width: 1199px) {
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cardBody { padding: 14px 20px; }
+  .cardBody { padding: 14px 22px 17.2px; }
   .caseTitle { font-size: 28px; }
   .summaryItem { grid-template-columns: 100px minmax(0, 1fr); }
   .cases { padding-block: 64px 56px; }
@@ -81,6 +82,10 @@
 
 @media (max-width: 767px) {
   .cards { grid-template-columns: 1fr; }
+  /* The first card's expanded subject uses the space previously around its copy. */
+  .card:first-child .cardBody { padding-block: 10px; }
+  .card:first-child .summary { margin-top: 8px; }
+  .card:first-child .detailCta { padding-top: 6.8px; }
   .caseTitle { min-height: 0; }
   .summaryItem { grid-template-columns: 90px minmax(0, 1fr); }
   .cases { padding-block: 46px; }
@@ -103,6 +108,9 @@
 @media (min-width: 1200px) and (max-width: 1300px) {
   .cards { gap: 20px; }
   .caseTitle { font-size: 25px; }
+}
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .cardBody { padding-bottom: 16.2px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .visual > img, .detailCta svg { transition: none; }
