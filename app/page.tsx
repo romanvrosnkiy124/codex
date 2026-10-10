@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import AboutSection from "../components/AboutSection";
+import CasesSection from "../components/CasesSection";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
 import PracticeAreas from "../components/PracticeAreas";
@@ -20,6 +21,7 @@ export default function Home() {
         <TrustStrip />
         <PracticeAreas />
         <AboutSection />
+        <CasesSection />
       </main>
     </SiteMotion>
   );
