@@ -15,7 +15,6 @@ export default function SiteMotion({ children }: { children: ReactNode }) {
       const portrait = select("[data-portrait-image]");
       const mask = select("[data-portrait-mask]");
       const header = select("[data-header]");
-      const eyebrow = select("[data-hero-eyebrow]");
       const lines = select("[data-headline-line]");
       const details = select("[data-hero-detail]");
       const actions = select("[data-hero-actions]");
@@ -26,7 +25,7 @@ export default function SiteMotion({ children }: { children: ReactNode }) {
       if (atTop) {
         gsap.set(intro, { autoAlpha: 1 });
         gsap.set(select("[data-intro-brand]"), { autoAlpha: 0, y: 10 });
-        gsap.set([header, eyebrow, details, actions], { autoAlpha: 0, y: 14 });
+        gsap.set([header, details, actions], { autoAlpha: 0, y: 14 });
         gsap.set(lines, { yPercent: 108 });
         gsap.set(portrait, { scale: 1.04 });
         gsap.set(mask, { clipPath: "inset(0 0 0 100%)" });
@@ -38,7 +37,6 @@ export default function SiteMotion({ children }: { children: ReactNode }) {
           .to(header, { autoAlpha: 1, y: 0, duration: 0.65, clearProps: "transform,opacity,visibility" }, 0.95)
           .to(mask, { clipPath: "inset(0 0 0 0)", duration: 1.1, ease: "power4.out" }, 0.8)
           .to(portrait, { scale: 1, duration: 1.55 }, 0.8)
-          .to(eyebrow, { autoAlpha: 1, y: 0, duration: 0.65 }, 1.02)
           .to(lines, { yPercent: 0, duration: 0.95, stagger: 0.12, ease: "power4.out" }, 1.12)
           .to(details, { autoAlpha: 1, y: 0, duration: 0.75, stagger: 0.1 }, 1.7)
           .to(actions, { autoAlpha: 1, y: 0, duration: 0.75 }, 2.08);

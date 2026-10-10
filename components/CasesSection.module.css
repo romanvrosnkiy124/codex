@@ -1,59 +1,42 @@
 .motionRoot { display: flow-root; }
 .cases { padding-block: 76px 64px; border-top: 1px solid var(--border); background: var(--ivory); }
-.intro { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr); gap: 76px; align-items: center; }
-.heading { margin-top: 14px; font-family: var(--serif); font-size: clamp(46px, 4.5vw, 66px); line-height: 1.02; letter-spacing: -.025em; }
+.intro { max-width: 850px; }
+.heading { margin-top: 14px; font-family: var(--serif); font-size: var(--heading-section); line-height: var(--leading-section); letter-spacing: -.025em; }
 .headingMask { display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.03em; }
 .headingMask > span { display: block; }
 .accent { color: var(--burgundy-dark); }
-.supporting { max-width: 690px; margin-top: 26px; color: var(--muted); font-size: 18px; line-height: 1.6; }
-.note { min-width: 0; margin: 0; padding-left: 34px; border-left: 1px solid var(--border); }
-.note > svg { width: 35px; height: 35px; margin-bottom: 22px; color: var(--burgundy-muted); }
-.note blockquote { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
-.note p { display: flex; align-items: center; gap: 15px; margin-top: 22px; color: var(--muted); font-size: 16px; }
-.note p::before { content: ""; width: 30px; height: 1px; background: var(--burgundy-muted); }
-.prototypeNotice { margin-block: 32px 20px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; line-height: 1.6; }
-.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; list-style: none; margin: 0; padding: 0; }
+.supporting { max-width: 690px; margin-top: 26px; color: var(--muted); font-size: var(--text-lead); line-height: 1.6; }
+.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; list-style: none; margin: 32px 0 0; padding: 0; }
 .card { min-width: 0; border: 1px solid rgba(75, 31, 32, .16); background: var(--ivory); }
 .cardInner { display: flex; flex-direction: column; height: 100%; }
 .cardVisual { position: relative; overflow: hidden; }
 .visual { position: relative; aspect-ratio: 1.95; overflow: hidden; background: var(--ivory-alt); }
 .visual > img { display: block; object-fit: cover; transform-origin: center; transition: transform 650ms cubic-bezier(.22,.61,.36,1); }
-.category { position: absolute; left: 12px; top: 12px; max-width: calc(100% - 24px); padding: 5px 8px; background: var(--ivory); color: var(--ink); font-size: 12px; line-height: 1.4; }
+.category { position: absolute; left: 12px; top: 12px; max-width: calc(100% - 24px); padding: 5px 8px; background: var(--ivory); color: var(--ink); font-size: var(--text-xs); line-height: 1.4; }
 /* Return the space saved by tighter line boxes to the inset, preserving card height. */
 .cardBody { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: 14px 18px 17.2px; }
-.caseTitle { min-height: 2.3em; font-family: var(--serif); font-size: 26px; line-height: 1.15; letter-spacing: -.015em; overflow-wrap: anywhere; hyphens: auto; }
+.caseTitle { min-height: 2.3em; font-family: var(--serif); font-size: var(--title-card); line-height: var(--leading-card); letter-spacing: -.015em; overflow-wrap: anywhere; hyphens: auto; }
 .summary { display: grid; gap: 9px; margin: 12px 0 0; }
 .summaryItem { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 10px; }
-.summaryItem dt { color: var(--muted); font-size: 14px; line-height: 1.45; }
-.summaryItem dd { margin: 0; color: var(--ink); font-size: 16px; line-height: 1.35; overflow-wrap: anywhere; }
-.detailCta { display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 14px; color: var(--muted); font-size: 14px; line-height: 24px; cursor: default; }
+.summaryItem dt { color: var(--muted); font-size: var(--text-sm); line-height: 1.45; }
+.summaryItem dd { margin: 0; color: var(--ink); font-size: var(--text-base); line-height: 1.35; overflow-wrap: anywhere; }
+.detailCta { display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 14px; color: var(--muted); font-size: var(--text-sm); line-height: 24px; cursor: default; }
 .detailCta svg { width: 19px; height: 16px; transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
 @media (hover: hover) and (pointer: fine) {
   .card:hover .visual > img { transform: scale(1.025); }
   .card:hover .detailCta svg { transform: translateX(3px); }
 }
 
-
 @media (max-width: 1199px) {
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cardBody { padding: 14px 22px 17.2px; }
-  .caseTitle { font-size: 28px; }
   .summaryItem { grid-template-columns: 100px minmax(0, 1fr); }
   .cases { padding-block: 64px 56px; }
-  .intro { gap: 40px; }
-  .heading { font-size: 50px; }
-  .note { padding-left: 26px; }
-}
 
-@media (max-width: 999px) {
-  .intro { grid-template-columns: 1fr; gap: 30px; }
-  .note { display: grid; grid-template-columns: 35px minmax(0, 1fr); column-gap: 20px; max-width: 560px; }
-  .note > svg { grid-row: 1 / 3; margin-bottom: 0; }
-  .note p { margin-top: 16px; }
 }
 
 @media (max-width: 767px) {
-  .cards { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; margin-top: 26px; }
   /* The first card's expanded subject uses the space previously around its copy. */
   .card:first-child .cardBody { padding-block: 10px; }
   .card:first-child .summary { margin-top: 8px; }
@@ -61,15 +44,11 @@
   .caseTitle { min-height: 0; }
   .summaryItem { grid-template-columns: 90px minmax(0, 1fr); }
   .cases { padding-block: 46px; }
-  .heading { font-size: 42px; }
-  .supporting { margin-top: 23px; font-size: 16px; }
-  .note { padding-left: 20px; }
-  .prototypeNotice { margin-block: 24px 18px; padding-top: 20px; }
+  .supporting { margin-top: 23px; font-size: var(--text-base); }
 }
 
 @media (min-width: 1200px) and (max-width: 1300px) {
   .cards { gap: 20px; }
-  .caseTitle { font-size: 25px; }
 }
 @media (min-width: 1000px) and (max-width: 1199px) {
   .cardBody { padding-bottom: 16.2px; }

@@ -1,7 +1,6 @@
 import { prototypeCases } from "../lib/cases-content";
 import CaseCard from "./CaseCard";
 import CasesMotion from "./CasesMotion";
-import { LineIcon } from "./LineIcon";
 import styles from "./CasesSection.module.css";
 
 export default function CasesSection() {
@@ -18,13 +17,7 @@ export default function CasesSection() {
               </h2>
               <p className={styles.supporting} data-cases-intro>Каждое дело — это конкретная ситуация, люди, аргументы и решение суда. Ниже — примеры практики, которые показывают подход к защите интересов клиента.</p>
             </div>
-            <aside className={styles.note} aria-label="Подход к судебной практике" data-cases-intro>
-              <LineIcon name="scales" />
-              <blockquote>Каждое дело требует внимательного анализа, правильно выстроенной позиции и ориентации на результат.</blockquote>
-              <p>Руслан Рагимов</p>
-            </aside>
           </div>
-          <p className={styles.prototypeNotice} data-cases-intro>Описания и результаты приведены для примера. Подтверждённые материалы дел будут добавлены позднее.</p>
           <ol className={styles.cards} aria-label="Примеры судебных дел">
             {prototypeCases.map((item) => <CaseCard item={item} key={item.id} />)}
           </ol>

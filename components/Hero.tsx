@@ -9,14 +9,13 @@ export default function Hero() {
       <div className="hero__visual" data-portrait-mask>
         <div className="hero__parallax" data-portrait-parallax>
           <div className="hero__image" data-portrait-image>
-            <Image src="/images/ruslan/ruslan-02.jpg" alt="Руслан Рагимов в деловом костюме в кабинете" fill preload sizes="(max-width: 767px) 100vw, 70vw" quality={85} />
+            <Image src="/images/ruslan/ruslan-hero-reference.webp" alt="Руслан Рагимов в деловом костюме в кабинете" fill preload sizes="(max-width: 767px) 100vw, 70vw" quality={85} />
           </div>
         </div>
       </div>
       <div className="hero__wash" aria-hidden="true" />
       <div className="container hero__inner">
         <div className="hero__content" data-hero-content>
-          <p className="eyebrow" data-hero-eyebrow>РУСЛАН РАГИМОВ</p>
           <h1 id="hero-heading" className="hero__heading" aria-label="Защищаю интересы людей и бизнеса.">
             <RevealText>Защищаю</RevealText>
             <RevealText>интересы</RevealText>

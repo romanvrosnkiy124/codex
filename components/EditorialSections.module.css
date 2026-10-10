@@ -3,12 +3,12 @@
 .reviews { padding-block: 68px 60px; background: var(--ivory-light); }
 .media { padding-block: 60px 76px; border-top: 1px solid var(--border); background: var(--ivory); }
 .sectionHeader { display: flex; justify-content: space-between; align-items: flex-end; gap: 36px; }
-.heading { margin-top: 14px; font-family: var(--serif); font-size: clamp(42px, 4.2vw, 62px); line-height: 1.06; letter-spacing: -.025em; }
+.heading { margin-top: 14px; font-family: var(--serif); font-size: var(--heading-section); line-height: var(--leading-section); letter-spacing: -.025em; }
 .headingMask { display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.03em; }
 .headingMask > span { display: block; }
 .accent { color: var(--burgundy-dark); }
 .headerLink { flex-shrink: 0; padding-bottom: 10px; }
-.link { display: inline-flex; align-items: center; gap: 12px; color: var(--burgundy-muted); font-size: 14px; line-height: 1.5; white-space: nowrap; }
+.link { display: inline-flex; align-items: center; gap: 12px; color: var(--burgundy-muted); font-size: var(--text-sm); line-height: 1.5; white-space: nowrap; }
 .link[aria-disabled="true"] { cursor: default; }
 .link svg { width: 19px; height: 16px; transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
 .reviewsGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 30px; }
@@ -17,19 +17,19 @@
 .reviewBody { display: grid; grid-template-columns: 53px minmax(0, 1fr); gap: 17px; }
 .initials { display: grid; place-items: center; width: 53px; height: 53px; border: 1px solid rgba(165, 138, 103, .28); border-radius: 50%; background: var(--ivory-alt); color: var(--burgundy-muted); font-family: var(--serif); font-size: 23px; line-height: 1; }
 .quoteMark { display: block; height: 30px; color: var(--burgundy-muted); font-family: var(--serif); font-size: 46px; line-height: 1; }
-.reviewText { margin: 9px 0 0; color: var(--ink); font-size: 16px; line-height: 1.65; overflow-wrap: normal; word-break: normal; }
+.reviewText { margin: 9px 0 0; color: var(--ink); font-size: var(--text-base); line-height: var(--leading-body); overflow-wrap: normal; word-break: normal; }
 .reviewAuthor { margin-top: auto; padding-top: 20px; }
-.reviewName { font-size: 16px; line-height: 1.5; }
-.reviewRole { margin-top: 4px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.reviewName { font-size: var(--text-base); line-height: 1.5; }
+.reviewRole { margin-top: 4px; color: var(--muted); font-size: var(--text-sm); line-height: 1.5; }
 .mediaIntro { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: center; gap: 40px; }
-.supporting { max-width: 430px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.supporting { max-width: 430px; color: var(--muted); font-size: var(--text-base); line-height: var(--leading-body); }
 .mediaGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 30px; }
 .mediaCard { min-width: 0; border: 1px solid var(--border); background: var(--ivory); transition: border-color 450ms cubic-bezier(.22,.61,.36,1); }
 .mediaInner { display: flex; flex-direction: column; height: 100%; padding: 22px 24px; }
-.source { color: var(--burgundy-muted); font-size: 14px; line-height: 1.5; letter-spacing: .09em; }
-.date { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.5; }
-.publicationTitle { margin-top: 16px; font-family: var(--serif); font-size: 27px; line-height: 1.15; letter-spacing: -.015em; overflow-wrap: normal; word-break: normal; hyphens: none; }
-.publicationDescription { margin-top: 12px; color: var(--muted); font-size: 16px; line-height: 1.55; overflow-wrap: normal; }
+.source { color: var(--burgundy-muted); font-size: var(--text-sm); line-height: 1.5; letter-spacing: .09em; }
+.date { margin-top: 8px; color: var(--muted); font-size: var(--text-sm); line-height: 1.5; }
+.publicationTitle { margin-top: 16px; font-family: var(--serif); font-size: var(--title-card); line-height: var(--leading-card); letter-spacing: -.015em; overflow-wrap: normal; word-break: normal; hyphens: none; }
+.publicationDescription { margin-top: 12px; color: var(--muted); font-size: var(--text-base); line-height: var(--leading-body); overflow-wrap: normal; }
 .readMore { align-self: flex-end; margin-top: auto; padding-top: 22px; }
 
 @media (hover: hover) and (pointer: fine) {
@@ -50,16 +50,14 @@
   .reviews { padding-block: 46px; }
   .media { padding-block: 46px 54px; }
   .sectionHeader { flex-direction: column; align-items: flex-start; gap: 22px; }
-  .heading { font-size: 42px; }
   .reviewsGrid, .mediaGrid { grid-template-columns: 1fr; gap: 18px; margin-top: 26px; }
   .reviewInner { padding: 22px; }
   .reviewBody { grid-template-columns: 47px minmax(0, 1fr); gap: 13px; }
   .initials { width: 47px; height: 47px; font-size: 21px; }
-  .reviewRole, .link, .source, .date { font-size: 16px; }
+  .reviewRole, .link, .source, .date { font-size: var(--text-base); }
   .mediaIntro { grid-template-columns: 1fr; gap: 22px; }
   .mediaTitle { grid-column: auto; }
   .mediaInner { padding: 22px; }
-  .publicationTitle { font-size: 28px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mediaCard, .link svg { transition: none; }
