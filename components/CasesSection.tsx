@@ -1,5 +1,5 @@
 import { prototypeCases } from "../lib/cases-content";
-import CasePanel from "./CasePanel";
+import CaseCard from "./CaseCard";
 import CasesApproach from "./CasesApproach";
 import CasesMotion from "./CasesMotion";
 import { LineIcon } from "./LineIcon";
@@ -26,8 +26,8 @@ export default function CasesSection() {
             </aside>
           </div>
           <p className={styles.prototypeNotice} data-cases-intro>Прототипы дел — примеры структуры подачи. Подтверждённые материалы и результаты будут добавлены позднее.</p>
-          <ol className={styles.panels} aria-label="Прототипы судебных дел">
-            {prototypeCases.map((item, index) => <CasePanel item={item} index={index + 1} total={prototypeCases.length} key={item.id} />)}
+          <ol className={styles.cards} aria-label="Прототипы судебных дел">
+            {prototypeCases.map((item) => <CaseCard item={item} key={item.id} />)}
           </ol>
         </div>
       </section>

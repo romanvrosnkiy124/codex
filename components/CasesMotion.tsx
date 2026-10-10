@@ -20,14 +20,10 @@ export default function CasesMotion({ children }: { children: ReactNode }) {
       select("[data-cases-heading], [data-method-heading]").forEach((line: Element, index: number) => {
         gsap.from(line, { opacity: 0, y: 24, duration: 1.1, delay: (index % 2) * 0.1, ease: "power3.out", scrollTrigger: enter(line) });
       });
-      select("[data-case-panel]").forEach((panel: Element) => {
-        const head = panel.querySelector("[data-case-head]");
-        const visual = panel.querySelector("[data-case-visual]");
-        if (head) gsap.from(head, { opacity: 0, duration: 1.1, ease: "power3.out", scrollTrigger: enter(panel) });
-        if (visual) gsap.from(visual, { clipPath: "inset(0 100% 0 0)", duration: 1.15, ease: "power3.out", scrollTrigger: enter(visual) });
-        panel.querySelectorAll("[data-case-field]").forEach((field: Element) => {
-          gsap.from(field, { opacity: 0, y: 16, duration: 0.95, ease: "power3.out", scrollTrigger: enter(field) });
-        });
+      select("[data-case-card]").forEach((card: Element, index: number) => {
+        const grid = card.parentElement;
+        const columns = grid ? getComputedStyle(grid).gridTemplateColumns.split(" ").length : 1;
+        gsap.from(card, { opacity: 0, y: 20, duration: 0.95, delay: (index % columns) * 0.09, ease: "power3.out", scrollTrigger: enter(card) });
       });
 
       gsap.fromTo(select("[data-method-shade]"), { opacity: 1 }, {
