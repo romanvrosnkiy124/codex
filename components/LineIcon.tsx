@@ -1,8 +1,10 @@
 import type { SVGProps } from "react";
 
-export type IconName = "scales" | "court" | "document" | "people" | "briefcase" | "shield" | "coins";
+export type IconName = "scales" | "court" | "document" | "people" | "briefcase" | "shield" | "coins" | "strategy" | "check";
 
 const paths: Record<IconName, React.ReactNode> = {
+  strategy: <><path d="M8 4v7h16V4h-4v4h-3V4h-3v4h-3V4H8zm2 7v4h12v-4M12 15l-3 10h14l-3-10M7 25h18v4H7zM12 18h8" /></>,
+  check: <><path d="M27 9a13 13 0 1 0 2 7" /><path d="m10 16 5 5L28 7" /></>,
   scales: <><path d="M16 4v24M10 28h12M7 10h18M16 4l-2 3h4zM7 10l-4 10h8L7 10zm18 0-4 10h8l-4-10z" /><path d="M3 20c0 4 8 4 8 0m10 0c0 4 8 4 8 0" /></>,
   court: <><path d="m3 10 13-7 13 7H3zm2 3h22M5 26h22M3 29h26M7 13v13m6-13v13m6-13v13m6-13v13" /></>,
   document: <><path d="M8 3h11l6 6v20H8V3zm11 0v7h6M12 15h9m-9 5h9m-9 5h6" /></>,

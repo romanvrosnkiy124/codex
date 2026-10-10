@@ -55,13 +55,13 @@ export default function Header() {
           <span className="brand__copy"><span className="brand__name">РУСЛАН РАГИМОВ</span><span className="brand__caption">ЮРИСТ | ПРЕДСТАВИТЕЛЬ В СУДАХ</span></span>
         </a>
         <nav className="desktop-nav" aria-label="Основная навигация">
-          {navigation.map((label) => label === "Практики" ? <a href="#practices" key={label}>{label}</a> : label === "Контакты" ? <a key={label} href="https://t.me/ragimovlaw" target="_blank" rel="noopener noreferrer">{label}</a> : <span key={label} aria-disabled="true">{label}</span>)}
+          {navigation.map((label) => (label === "Практики" || label === "Обо мне") ? <a href={label === "Обо мне" ? "#about" : "#practices"} key={label}>{label}</a> : label === "Контакты" ? <a key={label} href="https://t.me/ragimovlaw" target="_blank" rel="noopener noreferrer">{label}</a> : <span key={label} aria-disabled="true">{label}</span>)}
         </nav>
         <div className="site-header__contact"><ContactButton compact /></div>
         <button ref={menuButton} type="button" className="menu-toggle" aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Закрыть меню" : "Открыть меню"} onClick={() => setOpen(!open)}><span /><span /></button>
       </div>
       <nav ref={menu} id="mobile-navigation" className="mobile-nav" hidden={!open} aria-label="Мобильная навигация" data-lenis-prevent>
-        {navigation.map((label) => label === "Практики" ? <a key={label} href="#practices" onClick={() => { setOpen(false); menuButton.current?.focus(); }}>{label}</a> : label === "Контакты" ? <a key={label} href="https://t.me/ragimovlaw" target="_blank" rel="noopener noreferrer">{label}</a> : <span key={label} aria-disabled="true">{label}</span>)}
+        {navigation.map((label) => (label === "Практики" || label === "Обо мне") ? <a key={label} href={label === "Обо мне" ? "#about" : "#practices"} onClick={() => { setOpen(false); menuButton.current?.focus(); }}>{label}</a> : label === "Контакты" ? <a key={label} href="https://t.me/ragimovlaw" target="_blank" rel="noopener noreferrer">{label}</a> : <span key={label} aria-disabled="true">{label}</span>)}
         <ContactButton />
       </nav>
     </header>

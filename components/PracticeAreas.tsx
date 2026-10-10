@@ -18,7 +18,7 @@ export default function PracticeAreas() {
           {areas.map(({ title, icon }) => <li key={title} className="practice-card" data-practice-card><LineIcon name={icon} /><h3>{title}</h3><Arrow className="practice-card__arrow" /></li>)}
         </ul>
       </div>
-      <div className="next-section-hint" aria-hidden="true"><div className="container"><span /><span /></div></div>
+      <div className="next-section-hint" aria-hidden="true" />
     </section>
   );
 }
