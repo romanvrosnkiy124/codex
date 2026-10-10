@@ -27,10 +27,10 @@
   display: grid;
   grid-template-columns: 22px minmax(0, 1fr);
   column-gap: 10px;
-  left: var(--about-edge);
+  left: 0;
   bottom: 0;
-  width: 520px;
-  max-width: calc(100% - var(--about-edge) - 24px);
+  width: 100%;
+  max-width: 100%;
   padding: 16px 25px 20px;
   background: var(--burgundy-dark);
   color: var(--ivory);
@@ -49,13 +49,13 @@
 .metric { min-width: 0; padding-inline: 14px; border-left: 1px solid var(--border); }
 .metric:first-child { padding-left: 0; border-left: 0; }
 .metric:last-child { padding-right: 0; }
-.metricValue, .metricValueLong { margin: 0 0 12px; color: var(--burgundy); font-size: 27px; font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
+.metricValue, .metricValueLong { margin: 0 0 12px; color: var(--burgundy); font-family: var(--sans); font-size: 27px; font-weight: 600; font-variant-numeric: lining-nums tabular-nums; line-height: 1.2; letter-spacing: -.035em; }
 .metricValueLong { font-size: 19px; letter-spacing: -.02em; }
 .metric dt span, .metric dd span { display: block; }
 .metric dd { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.4; }
 .metricValue { white-space: nowrap; }
 
-.career { padding-block: 36px 46px; background: var(--ink); color: var(--ivory); box-shadow: 0 0 0 100vmax var(--ink); clip-path: inset(0 -100vmax); }
+.career { padding-block: 36px 46px; background: var(--charcoal); color: var(--ivory); box-shadow: 0 0 0 100vmax var(--charcoal); clip-path: inset(0 -100vmax); }
 .careerHeading { margin-bottom: 24px; font-family: var(--serif); font-size: 32px; line-height: 1.1; letter-spacing: -.015em; }
 .timeline { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px; margin: 0; padding: 0; list-style: none; }
 .careerStage { position: relative; min-width: 0; }
@@ -105,7 +105,7 @@
   .lead { grid-template-columns: 1fr; gap: 0; }
   .portrait { width: 100%; max-width: 560px; margin-inline: auto; }
   .imageFrame { min-height: 0; height: auto; aspect-ratio: .86; }
-  .quote { left: 0; max-width: calc(100% - 24px); }
+  .quote { left: 0; max-width: 100%; }
   .copy { padding-block: 40px 0; }
   .heading { font-size: 48px; }
   .metrics { margin-top: 32px; }
