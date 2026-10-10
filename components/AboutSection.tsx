@@ -24,7 +24,7 @@ export default function AboutSection() {
             <figcaption className={styles.quote} data-about-quote>
               <span className={styles.quoteMark} aria-hidden="true">“</span>
               <blockquote>«Моя задача — не просто участвовать в процессе, а добиваться реального результата для клиента.»</blockquote>
-              <p className={styles.signature}>Руслан Рагимов</p>
+              <span className={styles.quoteEnd} aria-hidden="true"><span className={styles.quoteMark}>”</span></span>
             </figcaption>
           </figure>
 
