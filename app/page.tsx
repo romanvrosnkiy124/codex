@@ -2,6 +2,8 @@ import Header from "../components/Header";
 import AboutSection from "../components/AboutSection";
 import CasesSection from "../components/CasesSection";
 import EditorialMotion from "../components/EditorialMotion";
+import FinalContactSection from "../components/FinalContactSection";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
 import MediaSection from "../components/MediaSection";
@@ -29,7 +31,9 @@ export default function Home() {
           <ReviewsSection />
           <MediaSection />
         </EditorialMotion>
+        <FinalContactSection />
       </main>
+      <Footer />
     </SiteMotion>
   );
 }
