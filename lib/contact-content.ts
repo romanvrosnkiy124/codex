@@ -5,6 +5,12 @@ export const telegramContact = {
   url: "https://t.me/ragimovlaw",
 } as const;
 
+export const maxContact = {
+  label: "MAX",
+  // TODO: Insert Ruslan's confirmed MAX profile URL here; null keeps the action disabled.
+  url: null as string | null,
+} as const;
+
 export const footerNavigation = [
   { label: "Обо мне", href: "#about" },
   { label: "Практики", href: "#practices" },
