@@ -1,0 +1,68 @@
+.motionRoot { display: flow-root; }
+.reviews { padding-block: 68px 60px; background: var(--ivory); }
+.media { padding-block: 60px 76px; border-top: 1px solid var(--border); background: var(--ivory); }
+.sectionHeader { display: flex; justify-content: space-between; align-items: flex-end; gap: 36px; }
+.heading { margin-top: 14px; font-family: var(--serif); font-size: clamp(42px, 4.2vw, 62px); line-height: 1.06; letter-spacing: -.025em; }
+.headingMask { display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.03em; }
+.headingMask > span { display: block; }
+.accent { color: var(--burgundy-dark); }
+.headerLink { flex-shrink: 0; padding-bottom: 10px; }
+.link { display: inline-flex; align-items: center; gap: 12px; color: var(--burgundy-muted); font-size: 14px; line-height: 1.5; white-space: nowrap; }
+.link[aria-disabled="true"] { cursor: default; }
+.link svg { width: 19px; height: 16px; transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
+.notice { max-width: 850px; margin-block: 22px 28px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.reviewsGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.reviewCard { min-width: 0; border: 1px solid var(--border); background: var(--ivory); }
+.reviewInner { display: flex; flex-direction: column; height: 100%; padding: 26px 24px 24px; }
+.reviewBody { display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 20px; }
+.initials { display: grid; place-items: center; width: 50px; height: 50px; border: 1px solid rgba(165, 138, 103, .28); border-radius: 50%; background: var(--ivory-alt); color: var(--burgundy-muted); font-family: var(--serif); font-size: 23px; line-height: 1; }
+.quoteMark { display: block; height: 30px; color: var(--burgundy-muted); font-family: var(--serif); font-size: 46px; line-height: 1; }
+.reviewText { margin: 9px 0 0; color: var(--ink); font-size: 16px; line-height: 1.65; overflow-wrap: anywhere; }
+.reviewAuthor { margin-top: auto; padding-top: 28px; }
+.reviewName { font-size: 16px; line-height: 1.5; }
+.reviewRole { margin-top: 4px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.mediaIntro { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) auto; align-items: center; gap: 40px; }
+.supporting { max-width: 430px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.mediaGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.mediaCard { min-width: 0; border: 1px solid var(--border); background: var(--ivory); transition: border-color 450ms cubic-bezier(.22,.61,.36,1); }
+.mediaInner { display: flex; flex-direction: column; height: 100%; padding: 24px; }
+.source { min-height: 3em; color: var(--burgundy-muted); font-size: 14px; line-height: 1.5; }
+.date { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.publicationTitle { margin-top: 22px; font-family: var(--serif); font-size: 27px; line-height: 1.15; letter-spacing: -.015em; overflow-wrap: anywhere; hyphens: auto; }
+.readMore { align-self: flex-end; margin-top: auto; padding-top: 28px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover svg, .mediaCard:hover .readMore svg { transform: translateX(3px); }
+  .mediaCard:hover { border-color: rgba(75, 31, 32, .24); }
+}
+@media (max-width: 1199px) {
+  .reviews { padding-block: 60px 54px; }
+  .media { padding-block: 54px 64px; }
+  .reviewsGrid, .mediaGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reviewBody { gap: 16px; }
+  .mediaIntro { grid-template-columns: minmax(0, 1fr) auto; gap: 24px 32px; }
+  .mediaTitle { grid-column: 1 / -1; }
+  .supporting { max-width: 650px; }
+  .headerLink { padding-bottom: 0; }
+}
+@media (max-width: 767px) {
+  .reviews { padding-block: 46px; }
+  .media { padding-block: 46px 54px; }
+  .sectionHeader { flex-direction: column; align-items: flex-start; gap: 22px; }
+  .heading { font-size: 42px; }
+  .notice { margin-block: 22px 26px; font-size: 16px; }
+  .reviewsGrid, .mediaGrid { grid-template-columns: 1fr; gap: 18px; }
+  .reviewInner { padding: 24px 22px; }
+  .reviewBody { grid-template-columns: 44px minmax(0, 1fr); gap: 16px; }
+  .initials { width: 44px; height: 44px; font-size: 21px; }
+  .reviewRole, .link, .source, .date { font-size: 16px; }
+  .mediaIntro { grid-template-columns: 1fr; gap: 22px; }
+  .mediaTitle { grid-column: auto; }
+  .mediaInner { padding: 24px 22px; }
+  .source { min-height: 0; }
+  .publicationTitle { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mediaCard, .link svg { transition: none; }
+  .link:hover svg, .mediaCard:hover .readMore svg { transform: none; }
+}

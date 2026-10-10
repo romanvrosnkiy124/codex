@@ -1,9 +1,12 @@
 import Header from "../components/Header";
 import AboutSection from "../components/AboutSection";
 import CasesSection from "../components/CasesSection";
+import EditorialMotion from "../components/EditorialMotion";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
+import MediaSection from "../components/MediaSection";
 import PracticeAreas from "../components/PracticeAreas";
+import ReviewsSection from "../components/ReviewsSection";
 import SiteMotion from "../components/SiteMotion";
 import SmoothScroll from "../components/SmoothScroll";
 import TrustStrip from "../components/TrustStrip";
@@ -22,6 +25,10 @@ export default function Home() {
         <PracticeAreas />
         <AboutSection />
         <CasesSection />
+        <EditorialMotion>
+          <ReviewsSection />
+          <MediaSection />
+        </EditorialMotion>
       </main>
     </SiteMotion>
   );
