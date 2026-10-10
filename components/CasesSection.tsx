@@ -1,6 +1,5 @@
 import { prototypeCases } from "../lib/cases-content";
 import CaseCard from "./CaseCard";
-import CasesApproach from "./CasesApproach";
 import CasesMotion from "./CasesMotion";
 import { LineIcon } from "./LineIcon";
 import styles from "./CasesSection.module.css";
@@ -31,7 +30,6 @@ export default function CasesSection() {
           </ol>
         </div>
       </section>
-      <CasesApproach />
     </CasesMotion>
   );
 }

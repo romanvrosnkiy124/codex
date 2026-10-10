@@ -1,5 +1,3 @@
-import type { IconName } from "../components/LineIcon";
-
 export type CaseVisualKind = "architecture" | "contract" | "registry" | "employment";
 
 export type PracticeCase = {
@@ -91,10 +89,3 @@ export const caseFields = [
   { key: "actions", label: "Что было сделано" },
   { key: "result", label: "Результат" },
 ] as const;
-
-export const caseMethodSteps: { number: string; title: string; icon: IconName }[] = [
-  { number: "01", title: "Анализ ситуации", icon: "document" },
-  { number: "02", title: "Оценка перспектив", icon: "scales" },
-  { number: "03", title: "Стратегия", icon: "strategy" },
-  { number: "04", title: "Представительство и результат", icon: "check" },
-];
