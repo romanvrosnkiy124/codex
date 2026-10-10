@@ -1,10 +1,10 @@
-import { allReviewsUrl, reviews, reviewsNotice } from "../lib/reviews-content";
+import { allReviewsUrl, reviews } from "../lib/reviews-content";
 import EditorialLink from "./EditorialLink";
 import styles from "./EditorialSections.module.css";
 
 export default function ReviewsSection() {
   return (
-    <section id="reviews" className={styles.reviews} aria-labelledby="reviews-heading" aria-describedby="reviews-notice" data-editorial-section>
+    <section id="reviews" className={styles.reviews} aria-labelledby="reviews-heading" data-editorial-section>
       <div className="container">
         <div className={styles.sectionHeader}>
           <div>
@@ -16,8 +16,7 @@ export default function ReviewsSection() {
           </div>
           <div className={styles.headerLink} data-editorial-reveal><EditorialLink href={allReviewsUrl}>Все отзывы</EditorialLink></div>
         </div>
-        <p id="reviews-notice" className={styles.notice} data-editorial-reveal>{reviewsNotice}</p>
-        <ul className={styles.reviewsGrid} aria-label="Примеры структуры отзывов">
+        <ul className={styles.reviewsGrid} aria-label="Отзывы">
           {reviews.map((review) => (
             <li className={styles.reviewCard} key={review.id} data-editorial-card data-verified={review.verified}>
               <article className={styles.reviewInner} aria-labelledby={`review-${review.id}-name`}>

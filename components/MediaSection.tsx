@@ -1,10 +1,10 @@
-import { allPublicationsUrl, mediaNotice, publications } from "../lib/media-content";
+import { publications } from "../lib/media-content";
 import EditorialLink from "./EditorialLink";
 import styles from "./EditorialSections.module.css";
 
 export default function MediaSection() {
   return (
-    <section id="media" className={styles.media} aria-labelledby="media-heading" aria-describedby="media-notice" data-editorial-section>
+    <section id="media" className={styles.media} aria-labelledby="media-heading" data-editorial-section>
       <div className="container">
         <div className={styles.mediaIntro}>
           <div className={styles.mediaTitle}>
@@ -15,16 +15,15 @@ export default function MediaSection() {
             </h2>
           </div>
           <p className={styles.supporting} data-editorial-reveal>Даю комментарии по актуальным правовым вопросам, выступаю экспертом в СМИ и на профессиональных площадках.</p>
-          <div className={styles.headerLink} data-editorial-reveal><EditorialLink href={allPublicationsUrl}>Все публикации</EditorialLink></div>
         </div>
-        <p id="media-notice" className={styles.notice} data-editorial-reveal>{mediaNotice}</p>
-        <ul className={styles.mediaGrid} aria-label="Примеры тем публикаций">
+        <ul className={styles.mediaGrid} aria-label="Публикации SUDNOTICE">
           {publications.map((publication) => (
             <li className={styles.mediaCard} key={publication.id} data-editorial-card data-verified={publication.verified}>
               <article className={styles.mediaInner} aria-labelledby={`publication-${publication.id}-heading`}>
                 <p className={styles.source}>{publication.source}</p>
-                <p className={styles.date}>{publication.date ?? "Дата уточняется"}</p>
+                {publication.date && <p className={styles.date}>{publication.date}</p>}
                 <h3 id={`publication-${publication.id}-heading`} className={styles.publicationTitle}>{publication.title}</h3>
+                <p className={styles.publicationDescription}>{publication.description}</p>
                 <EditorialLink href={publication.verified ? publication.url : null} className={styles.readMore}>Читать</EditorialLink>
               </article>
             </li>

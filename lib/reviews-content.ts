@@ -35,5 +35,4 @@ export const reviews: ClientReview[] = [
   },
 ];
 
-export const reviewsNotice = "Отзывы приведены как пример структуры. Подтверждённые отзывы будут добавлены позднее.";
 export const allReviewsUrl: string | null = null;
