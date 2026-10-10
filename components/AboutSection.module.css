@@ -1,0 +1,151 @@
+.motionRoot { display: flow-root; }
+
+.about {
+  --about-edge: max(var(--gutter), calc((100vw - 1320px) / 2));
+  /* Occupy the former decorative hint without moving the approved practice grid. */
+  position: relative;
+  margin-top: -70px;
+  border-top: 1px solid rgba(255, 255, 255, .65);
+  background: var(--ivory);
+  scroll-margin-top: 0;
+}
+
+.lead { display: grid; grid-template-columns: 40% minmax(0, 1fr); gap: clamp(32px, 4vw, 60px); }
+.portrait { position: relative; min-width: 0; margin: 0 0 0 calc(-1 * var(--about-edge)); }
+.imageFrame { position: relative; height: 100%; min-height: 620px; overflow: hidden; isolation: isolate; background: #e9e0d1; }
+.image {
+  object-fit: cover;
+  object-position: 50% 20%;
+  transform: scale(.94);
+  transform-origin: center bottom;
+  mix-blend-mode: multiply;
+  mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent), linear-gradient(180deg, transparent, #000 1.25%);
+  mask-composite: intersect;
+}
+.quote {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  column-gap: 10px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 16px 25px 20px;
+  background: var(--burgundy-dark);
+  color: var(--ivory);
+}
+.quoteMark { display: block; height: 38px; font-family: var(--serif); font-size: 64px; line-height: 1; }
+.quote blockquote { margin: 0; font-size: var(--text-base); line-height: 1.55; }
+.quoteEnd { grid-column: 2; position: relative; height: 24px; margin-top: 15px; }
+.quoteEnd .quoteMark { position: absolute; right: 0; top: -14px; }
+.copy { min-width: 0; align-self: center; padding-block: 46px; }
+.heading { margin-top: 12px; font-family: var(--serif); font-size: var(--heading-section); line-height: var(--leading-section); letter-spacing: -.025em; }
+.lineMask { display: block; overflow: hidden; padding-bottom: .09em; margin-bottom: -.02em; }
+.lineMask > span { display: block; }
+.accent { color: var(--burgundy-dark); }
+.biography { margin-top: 30px; font-size: var(--text-base); line-height: var(--leading-body); }
+.biography p + p { margin-top: 17px; color: var(--muted); }
+.metrics { display: grid; grid-template-columns: .9fr .9fr 1.2fr 1.4fr; margin: 40px 0 0; }
+.metric { min-width: 0; padding-inline: 14px; border-left: 1px solid var(--border); }
+.metric:first-child { padding-left: 0; border-left: 0; }
+.metric:last-child { padding-right: 0; }
+.metricValue, .metricValueLong { margin: 0 0 12px; color: var(--burgundy); font-family: var(--sans); font-size: var(--metric-value); font-weight: 600; font-variant-numeric: lining-nums tabular-nums; line-height: 1.2; letter-spacing: -.035em; }
+.metricValueLong { font-size: var(--text-lead); letter-spacing: -.02em; }
+.metric dt span, .metric dd span { display: block; }
+.metric dd { margin: 0; color: var(--muted); font-size: var(--text-base); line-height: 1.4; }
+.metricValue { white-space: nowrap; }
+
+.career { padding-block: 36px 46px; background: var(--charcoal); color: var(--ivory); box-shadow: 0 0 0 100vmax var(--charcoal); clip-path: inset(0 -100vmax); }
+.careerHeading { margin-bottom: 24px; font-family: var(--serif); font-size: var(--heading-small); line-height: 1.1; letter-spacing: -.015em; }
+.timeline { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px; margin: 0; padding: 0; list-style: none; }
+.careerStage { position: relative; min-width: 0; }
+.careerDate { display: block; min-height: 24px; margin-bottom: 14px; color: #cbb38f; font-size: var(--text-base); line-height: 24px; }
+.node { position: relative; z-index: 1; display: block; width: 8px; height: 8px; border: 1px solid var(--bronze); border-radius: 50%; background: var(--ink); }
+.careerStage:first-child .node { background: var(--bronze); }
+.careerStage:last-child .node { background: var(--ivory); border-color: var(--ivory); }
+.track { position: absolute; top: 42px; left: 4px; width: calc(100% + 32px); height: 1px; background: rgba(165, 138, 103, .25); }
+.progress { display: block; width: 100%; height: 100%; background: var(--bronze); transform-origin: left top; }
+.careerTitle { margin-top: 17px; padding-right: 8px; color: rgba(243, 240, 233, .8); font-size: var(--text-base); line-height: 1.5; }
+
+.approach { padding-block: 38px 64px; border-top: 1px solid rgba(255, 255, 255, .85); }
+.approachInner { display: grid; grid-template-columns: 29% minmax(0, 1fr); gap: 36px; }
+.approachHeading h3 { margin-top: 14px; color: var(--burgundy-dark); font-family: var(--serif); font-size: var(--heading-subsection); line-height: 1.08; letter-spacing: -.02em; }
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; list-style: none; margin: 0; padding: 0; }
+.step { min-width: 0; }
+.stepTop { display: flex; align-items: flex-start; gap: 15px; position: relative; min-height: 62px; }
+.stepIcon { width: 37px; height: 37px; color: var(--burgundy); }
+.stepNumber { color: var(--bronze); font-size: var(--text-lead); line-height: 1.25; }
+.connector { position: absolute; right: 2px; top: 14px; color: var(--burgundy-muted); }
+.connector svg { width: 18px; height: 12px; }
+.stepCopy { min-height: 142px; border-left: 1px solid var(--border); padding-left: 16px; }
+.step:first-child .stepCopy { border-left: 0; padding-left: 0; }
+.step h4 { margin: 0 0 15px; font-size: var(--text-lead); line-height: 1.4; font-weight: 400; overflow-wrap: anywhere; }
+.step p { font-size: var(--text-base); line-height: 1.5; color: var(--muted); }
+
+@media (max-width: 1279px) {
+  .lead { grid-template-columns: 38% minmax(0, 1fr); }
+  .copy { padding-block: 38px; }
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; margin-top: 30px; }
+  .metric:nth-child(odd) { padding-left: 0; border-left: 0; }
+  .quote { padding-inline: 22px; }
+  .approachInner { grid-template-columns: 1fr; gap: 30px; }
+  .timeline { gap: 24px; }
+  .track { width: calc(100% + 24px); }
+  .careerDate { font-size: var(--text-base); line-height: 1.35; min-height: 44px; }
+  .track { top: 62px; }
+}
+
+@media (min-width: 1001px) and (max-width: 1100px) {
+  .image { object-position: 56% 20%; }
+}
+
+@media (max-width: 1000px) {
+  .lead { grid-template-columns: 1fr; gap: 0; }
+  .portrait { width: 100%; max-width: 560px; margin-inline: auto; }
+  .imageFrame { min-height: 0; height: auto; aspect-ratio: .86; }
+  .quote { left: 0; max-width: 100%; }
+  .copy { padding-block: 40px 0; }
+  .metrics { margin-top: 32px; }
+  .career { padding-top: 48px; }
+  .timeline { display: flex; flex-direction: column; gap: 28px; }
+  .careerStage { padding-left: 28px; }
+  .careerDate { min-height: 0; margin-bottom: 6px; line-height: 1.5; }
+  .careerDate:empty { display: none; }
+  .node { position: absolute; left: 0; top: 8px; }
+  .track { top: 12px; bottom: -40px; left: 4px; width: 1px; height: auto; }
+  .careerTitle { margin-top: 0; padding-right: 0; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+  .step:nth-child(odd) .stepCopy { border-left: 0; padding-left: 0; }
+  .step:nth-child(2) .connector { display: none; }
+}
+
+@media (max-width: 767px) {
+  .about { margin-top: -60px; }
+  .biography { margin-top: 24px; }
+  .metric { padding-inline: 14px; }
+  .career { padding-block: 42px; }
+  .careerHeading { margin-bottom: 28px; }
+  .approach { padding-block: 34px 48px; }
+  .steps { grid-template-columns: 1fr; gap: 26px; }
+  .step { display: grid; grid-template-columns: 66px minmax(0, 1fr); gap: 18px; }
+  .stepTop { min-height: 0; flex-direction: column; gap: 10px; }
+  .stepNumber { padding-left: 5px; font-size: var(--text-base); }
+  .step .stepCopy { min-height: 0; border-left: 1px solid var(--border); padding-left: 18px; }
+  .step:nth-child(odd) .stepCopy { border-left: 1px solid var(--border); padding-left: 18px; }
+  .step h4 { margin-bottom: 10px; font-size: var(--text-lead); }
+  .connector { display: none; }
+}
+
+@media (max-width: 600px) {
+  .quote { position: relative; width: 100%; max-width: none; margin-top: -20px; padding: 20px; }
+  .quoteMark { height: 32px; font-size: 56px; }
+  .quote blockquote { line-height: 1.6; }
+  .quoteEnd { margin-top: 14px; }
+  .quoteEnd .quoteMark { top: -8px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Lenis adds its own 90px anchor offset; retain only the root's scroll padding. */
+  .about { scroll-margin-top: -90px; }
+}
