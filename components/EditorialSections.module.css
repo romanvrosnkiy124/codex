@@ -7,7 +7,6 @@
 .headingMask { display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.03em; }
 .headingMask > span { display: block; }
 .accent { color: var(--burgundy-dark); }
-.headerLink { flex-shrink: 0; padding-bottom: 10px; }
 .link { display: inline-flex; align-items: center; gap: 12px; color: var(--burgundy-muted); font-size: var(--text-sm); line-height: 1.5; white-space: nowrap; }
 .link[aria-disabled="true"] { cursor: default; }
 .link svg { width: 19px; height: 16px; transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
@@ -44,7 +43,6 @@
   .mediaIntro { grid-template-columns: 1fr; gap: 24px; }
   .mediaTitle { grid-column: 1 / -1; }
   .supporting { max-width: 650px; }
-  .headerLink { padding-bottom: 0; }
 }
 @media (max-width: 767px) {
   .reviews { padding-block: 46px; }

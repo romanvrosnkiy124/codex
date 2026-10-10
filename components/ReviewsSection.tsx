@@ -1,5 +1,4 @@
-import { allReviewsUrl, reviews } from "../lib/reviews-content";
-import EditorialLink from "./EditorialLink";
+import { reviews } from "../lib/reviews-content";
 import styles from "./EditorialSections.module.css";
 
 export default function ReviewsSection() {
@@ -14,7 +13,6 @@ export default function ReviewsSection() {
               <span className={`${styles.headingMask} ${styles.accent}`}><span data-editorial-heading>говорит само за себя.</span></span>
             </h2>
           </div>
-          <div className={styles.headerLink} data-editorial-reveal><EditorialLink href={allReviewsUrl}>Все отзывы</EditorialLink></div>
         </div>
         <ul className={styles.reviewsGrid} aria-label="Отзывы">
           {reviews.map((review) => (

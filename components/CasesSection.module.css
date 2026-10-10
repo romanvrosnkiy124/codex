@@ -5,7 +5,7 @@
 .headingMask { display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.03em; }
 .headingMask > span { display: block; }
 .accent { color: var(--burgundy-dark); }
-.supporting { max-width: 690px; margin-top: 26px; color: var(--muted); font-size: var(--text-lead); line-height: 1.6; }
+.supporting { max-width: 780px; margin-top: 26px; color: var(--muted); font-size: var(--text-lead); line-height: 1.6; }
 .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; list-style: none; margin: 32px 0 0; padding: 0; }
 .card { min-width: 0; border: 1px solid rgba(75, 31, 32, .16); background: var(--ivory); }
 .cardInner { display: flex; flex-direction: column; height: 100%; }
