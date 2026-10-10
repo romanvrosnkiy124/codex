@@ -55,17 +55,17 @@
 .metric dd { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.4; }
 .metricValue { white-space: nowrap; }
 
-.career { padding-block: 36px 46px; }
+.career { padding-block: 36px 46px; background: var(--ink); color: var(--ivory); box-shadow: 0 0 0 100vmax var(--ink); clip-path: inset(0 -100vmax); }
 .careerHeading { margin-bottom: 24px; font-family: var(--serif); font-size: 32px; line-height: 1.1; letter-spacing: -.015em; }
 .timeline { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px; margin: 0; padding: 0; list-style: none; }
 .careerStage { position: relative; min-width: 0; }
-.careerDate { display: block; min-height: 24px; margin-bottom: 14px; color: var(--burgundy); font-size: 16px; line-height: 24px; }
-.node { position: relative; z-index: 1; display: block; width: 8px; height: 8px; border: 1px solid var(--burgundy); border-radius: 50%; background: var(--ivory); }
-.careerStage:first-child .node { background: var(--burgundy-muted); }
-.careerStage:last-child .node { background: var(--burgundy); }
-.track { position: absolute; top: 42px; left: 4px; width: calc(100% + 32px); height: 1px; background: rgba(102, 42, 42, .14); }
-.progress { display: block; width: 100%; height: 100%; background: rgba(102, 42, 42, .44); transform-origin: left top; }
-.careerTitle { margin-top: 17px; padding-right: 8px; color: var(--muted); font-size: 16px; line-height: 1.5; }
+.careerDate { display: block; min-height: 24px; margin-bottom: 14px; color: #cbb38f; font-size: 16px; line-height: 24px; }
+.node { position: relative; z-index: 1; display: block; width: 8px; height: 8px; border: 1px solid var(--bronze); border-radius: 50%; background: var(--ink); }
+.careerStage:first-child .node { background: var(--bronze); }
+.careerStage:last-child .node { background: var(--ivory); border-color: var(--ivory); }
+.track { position: absolute; top: 42px; left: 4px; width: calc(100% + 32px); height: 1px; background: rgba(165, 138, 103, .25); }
+.progress { display: block; width: 100%; height: 100%; background: var(--bronze); transform-origin: left top; }
+.careerTitle { margin-top: 17px; padding-right: 8px; color: rgba(243, 240, 233, .8); font-size: 16px; line-height: 1.5; }
 
 .approach { padding-block: 38px 64px; border-top: 1px solid rgba(255, 255, 255, .85); }
 .approachInner { display: grid; grid-template-columns: 29% minmax(0, 1fr); gap: 36px; }
