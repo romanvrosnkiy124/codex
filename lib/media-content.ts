@@ -8,6 +8,7 @@ export type MediaPublication = {
   verified: boolean;
 };
 
+// TODO: Replace both SUDNOTICE homepage URLs below with confirmed direct article links.
 // Commentary items confirmed by the site owner. The supplied links point to
 // the source homepage; individual article URLs and dates have not been supplied.
 export const publications: MediaPublication[] = [

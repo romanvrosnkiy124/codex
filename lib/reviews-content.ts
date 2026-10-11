@@ -34,5 +34,3 @@ export const reviews: ClientReview[] = [
     verified: false,
   },
 ];
-
-export const allReviewsUrl: string | null = null;

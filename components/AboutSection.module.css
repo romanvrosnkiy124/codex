@@ -144,8 +144,3 @@
   .quoteEnd { margin-top: 14px; }
   .quoteEnd .quoteMark { top: -8px; }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  /* Lenis adds its own 90px anchor offset; retain only the root's scroll padding. */
-  .about { scroll-margin-top: -90px; }
-}

@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import ContactButton from "./ContactButton";
 import Monogram from "./Monogram";
 
-const navigation = ["Обо мне", "Практики", "Судебная практика", "Отзывы", "СМИ", "Контакты"];
+import { footerNavigation as navigation } from "../lib/contact-content";
+import { siteConfig } from "../lib/site-config";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,9 +22,18 @@ export default function Header() {
 
   useEffect(() => {
     if (!open) return;
+    const root = document.documentElement;
     const previousOverflow = document.body.style.overflow;
+    const previousRootOverflow = root.style.overflow;
+    const previousMenuOpen = root.dataset.menuOpen;
+    const background = Array.from(document.querySelectorAll<HTMLElement>("main, .site-shell > footer"));
+    const previousInert = background.map((element) => element.inert);
     document.body.style.overflow = "hidden";
-    menu.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+    root.style.overflow = "hidden";
+    root.dataset.menuOpen = "true";
+    background.forEach((element) => { element.inert = true; });
+    window.dispatchEvent(new CustomEvent("site:menu", { detail: true }));
+    menu.current?.querySelector<HTMLAnchorElement>("a")?.focus({ preventScroll: true });
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setOpen(false);
@@ -42,6 +52,11 @@ export default function Header() {
     window.addEventListener("resize", onResize);
     return () => {
       document.body.style.overflow = previousOverflow;
+      root.style.overflow = previousRootOverflow;
+      if (previousMenuOpen === undefined) delete root.dataset.menuOpen;
+      else root.dataset.menuOpen = previousMenuOpen;
+      background.forEach((element, index) => { element.inert = previousInert[index]; });
+      window.dispatchEvent(new CustomEvent("site:menu", { detail: false }));
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("resize", onResize);
     };
@@ -50,19 +65,19 @@ export default function Header() {
   return (
     <header className={`site-header${scrolled ? " site-header--scrolled" : ""}${open ? " site-header--open" : ""}`} data-header>
       <div className="container site-header__inner">
-        <a href="#top" className="brand" aria-label="Руслан Рагимов — на главную" onClick={() => setOpen(false)}>
+        <a href="#top" className="brand" aria-label={`${siteConfig.personName} — на главную`} onClick={() => setOpen(false)}>
           <Monogram />
-          <span className="brand__copy"><span className="brand__name">РУСЛАН РАГИМОВ</span><span className="brand__caption">ЮРИСТ | ПРЕДСТАВИТЕЛЬ В СУДАХ</span></span>
+          <span className="brand__copy"><span className="brand__name">{siteConfig.personName.toLocaleUpperCase("ru-RU")}</span><span className="brand__caption">ЮРИСТ | ПРЕДСТАВИТЕЛЬ В СУДАХ</span></span>
         </a>
         <nav className="desktop-nav" aria-label="Основная навигация">
-          {navigation.map((label) => (label === "Практики" || label === "Обо мне") ? <a href={label === "Обо мне" ? "#about" : "#practices"} key={label}>{label}</a> : label === "Контакты" ? <a key={label} href="https://t.me/ragimovlaw" target="_blank" rel="noopener noreferrer">{label}</a> : <span key={label} aria-disabled="true">{label}</span>)}
+          {navigation.map(({ label, href }) => <a key={href} href={href}>{label}</a>)}
         </nav>
         <div className="site-header__contact"><ContactButton compact /></div>
         <button ref={menuButton} type="button" className="menu-toggle" aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Закрыть меню" : "Открыть меню"} onClick={() => setOpen(!open)}><span /><span /></button>
       </div>
       <nav ref={menu} id="mobile-navigation" className="mobile-nav" hidden={!open} aria-label="Мобильная навигация" data-lenis-prevent>
-        {navigation.map((label) => (label === "Практики" || label === "Обо мне") ? <a key={label} href={label === "Обо мне" ? "#about" : "#practices"} onClick={() => { setOpen(false); menuButton.current?.focus(); }}>{label}</a> : label === "Контакты" ? <a key={label} href="https://t.me/ragimovlaw" target="_blank" rel="noopener noreferrer">{label}</a> : <span key={label} aria-disabled="true">{label}</span>)}
-        <ContactButton />
+        {navigation.map(({ label, href }) => <a key={href} href={href} onClick={() => { setOpen(false); menuButton.current?.focus(); }}>{label}</a>)}
+        <ContactButton onClick={() => { setOpen(false); menuButton.current?.focus(); }} />
       </nav>
     </header>
   );

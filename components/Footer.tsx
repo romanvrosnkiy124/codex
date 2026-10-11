@@ -1,3 +1,4 @@
+import { siteConfig } from "../lib/site-config";
 import { footerNavigation, telegramContact } from "../lib/contact-content";
 import Monogram from "./Monogram";
 import styles from "./FinalSections.module.css";
@@ -7,10 +8,10 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.footerMain}>
-          <a className={styles.brand} href="#top" aria-label="Руслан Рагимов — на главную">
+          <a className={styles.brand} href="#top" aria-label={`${siteConfig.personName} — на главную`}>
             <Monogram />
             <span className={styles.brandCopy}>
-              <span className={styles.brandName}>Руслан Рагимов</span>
+              <span className={styles.brandName}>{siteConfig.personName}</span>
               <span className={styles.brandRole}>Юрист | Представитель в судах</span>
             </span>
           </a>
@@ -25,8 +26,8 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <p>© 2026 Руслан Рагимов</p>
-          <a href="#">Политика конфиденциальности</a>
+          <p>© 2026 {siteConfig.personName}</p>
+          <a href="/privacy">Политика конфиденциальности</a>
         </div>
       </div>
     </footer>

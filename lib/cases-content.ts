@@ -82,10 +82,3 @@ export const prototypeCases: PracticeCase[] = [
     result: "Ориентир — правовая защита интересов работодателя. Подтверждённый итог будет добавлен позднее.",
   },
 ];
-
-export const caseFields = [
-  { key: "situation", label: "Ситуация" },
-  { key: "task", label: "Задача" },
-  { key: "actions", label: "Что было сделано" },
-  { key: "result", label: "Результат" },
-] as const;

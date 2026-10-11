@@ -36,7 +36,7 @@ export default function FinalContactSection() {
                   <span className={styles.messengerArrow}><Arrow /></span>
                 </a>
               ) : (
-                <button className={styles.messengerItem} type="button" disabled>
+                <button className={styles.messengerItem} type="button" disabled aria-disabled="true">
                   <span className={styles.messengerIcon}><MessengerIcon messenger="max" /></span>
                   <span className={styles.messengerCopy}><span className={styles.messengerName}>{maxContact.label}</span><span className={styles.messengerAction}>Написать в MAX</span></span>
                   <span className={styles.messengerArrow}><Arrow /></span>

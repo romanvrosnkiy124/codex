@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#f3f0e9"/>
+  <!-- Local outlined serif letterforms preserve the site's overlapping RR monogram. -->
+  <g fill="#4b1f20" fill-rule="evenodd">
+    <path d="M6 11h18c11 0 16 5 16 13 0 7-4 11-10 13l12 15h4v3H33L19 37h-3v15h6v3H6v-3h5V15H6v-4Zm10 4v18h7c8 0 12-3 12-9s-4-9-12-9h-7Z"/>
+    <path transform="translate(12 0)" d="M6 11h18c11 0 16 5 16 13 0 7-4 11-10 13l12 15h4v3H33L19 37h-3v15h6v3H6v-3h5V15H6v-4Zm10 4v18h7c8 0 12-3 12-9s-4-9-12-9h-7Z"/>
+  </g>
+</svg>
