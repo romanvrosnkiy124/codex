@@ -1,16 +1,15 @@
 import { siteConfig } from "./site-config";
 
-// The only confirmed contact channel supplied by the site owner.
+// Confirmed messenger contacts supplied by the site owner.
 export const telegramContact = {
   label: "Telegram",
   handle: "@ragimovlaw",
   url: siteConfig.telegramUrl,
 } as const;
 
-export const maxContact = {
-  label: "MAX",
-  // The confirmed MAX URL will be set centrally in site-config.ts.
-  url: siteConfig.maxUrl,
+export const whatsappContact = {
+  label: "WhatsApp",
+  url: siteConfig.whatsappUrl,
 } as const;
 
 export const footerNavigation = [

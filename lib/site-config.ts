@@ -32,8 +32,7 @@ export const siteConfig = {
   siteDescription: "Руслан Рагимов — практикующий юрист. Представительство в судах, арбитражные, гражданские, административные и трудовые споры.",
   siteUrl: SITE_URL,
   telegramUrl: "https://t.me/ragimovlaw",
-  // TODO: Insert the confirmed MAX profile URL; null keeps MAX non-navigating.
-  maxUrl: null as string | null,
+  whatsappUrl: "https://wa.me/79509975756",
   social: {
     title: "Руслан Рагимов — юрист и представитель в судах",
     description: "Представительство в судах и сопровождение юридических споров по всей России.",

@@ -1,4 +1,4 @@
-import { maxContact, telegramContact } from "../lib/contact-content";
+import { whatsappContact, telegramContact } from "../lib/contact-content";
 import ContactButton from "./ContactButton";
 import FinalContactMotion from "./FinalContactMotion";
 import { Arrow } from "./LineIcon";
@@ -29,19 +29,11 @@ export default function FinalContactSection() {
                 </span>
                 <span className={styles.messengerArrow}><Arrow /></span>
               </a>
-              {maxContact.url ? (
-                <a className={styles.messengerItem} href={maxContact.url} target="_blank" rel="noopener noreferrer">
-                  <span className={styles.messengerIcon}><MessengerIcon messenger="max" /></span>
-                  <span className={styles.messengerCopy}><span className={styles.messengerName}>{maxContact.label}</span><span className={styles.messengerAction}>Написать в MAX</span></span>
-                  <span className={styles.messengerArrow}><Arrow /></span>
-                </a>
-              ) : (
-                <button className={styles.messengerItem} type="button" disabled aria-disabled="true">
-                  <span className={styles.messengerIcon}><MessengerIcon messenger="max" /></span>
-                  <span className={styles.messengerCopy}><span className={styles.messengerName}>{maxContact.label}</span><span className={styles.messengerAction}>Написать в MAX</span></span>
-                  <span className={styles.messengerArrow}><Arrow /></span>
-                </button>
-              )}
+              <a className={styles.messengerItem} href={whatsappContact.url} target="_blank" rel="noopener noreferrer">
+                <span className={styles.messengerIcon}><MessengerIcon messenger="whatsapp" /></span>
+                <span className={styles.messengerCopy}><span className={styles.messengerName}>{whatsappContact.label}</span><span className={styles.messengerAction}>Написать в WhatsApp</span></span>
+                <span className={styles.messengerArrow}><Arrow /></span>
+              </a>
             </div>
             <div className={styles.actions} data-contact-actions>
               <ContactButton />
