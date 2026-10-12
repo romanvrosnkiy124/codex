@@ -13,7 +13,7 @@ const visualLabels: Record<CaseVisualKind, string> = {
 // or evidence. Documents contain no actual case details or identifying marks.
 export default function CaseVisual({ kind }: { kind: CaseVisualKind }) {
   return (
-    <div className={styles.visual}>
+    <div className={styles.visual} data-case-image>
       <Image
         src={`/images/cases/${kind}-editorial.webp`}
         alt={visualLabels[kind]}

@@ -15,12 +15,12 @@ export default function Approach() {
             <li key={number} className={styles.step} data-approach-step>
               <div className={styles.stepTop}>
                 <LineIcon name={icon} className={styles.stepIcon} data-approach-icon />
-                <span className={styles.stepNumber} aria-hidden="true">{number}</span>
+                <span className={styles.stepNumber} aria-hidden="true" data-approach-number>{number}</span>
                 {index < approachSteps.length - 1 && <span className={styles.connector} data-approach-connector><Arrow /></span>}
               </div>
               <div className={styles.stepCopy}>
-                <h4>{title}</h4>
-                <p>{description}</p>
+                <h4 data-approach-title>{title}</h4>
+                <p data-approach-copy>{description}</p>
               </div>
             </li>
           ))}
